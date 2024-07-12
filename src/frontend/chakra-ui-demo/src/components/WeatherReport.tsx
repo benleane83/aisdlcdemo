@@ -4,7 +4,7 @@ import { fetchWeatherForecast } from "../api/weatherApi";
 
 const WeatherReport = () => {
   const [location, setLocation] = useState("New York");
-  const [forecast, setForecast] = useState(null);
+  const [forecast, setForecast] = useState<{ today: string; next5Days: { date: string; description: string }[] } | null>(null);
 
   useEffect(() => {
     const getWeather = async () => {
@@ -32,8 +32,8 @@ const WeatherReport = () => {
         <Box>
           <Text>Today's Weather: {forecast.today}</Text>
           <Text>Next 7 Days:</Text>
-          {forecast.next7Days.map((day, index) => (
-            <Text key={index}>{day}</Text>
+          {forecast.next5Days.map((day, index) => (
+            <Text key={index}>{day.date}: {day.description}</Text>
           ))}
         </Box>
       ) : (

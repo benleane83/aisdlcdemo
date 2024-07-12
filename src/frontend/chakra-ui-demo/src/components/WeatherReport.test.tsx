@@ -2,8 +2,9 @@ import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { ChakraProvider } from "@chakra-ui/react";
 import WeatherReport from "./WeatherReport";
+import { JSX } from "react/jsx-runtime";
 
-const renderWithChakra = (ui) => {
+const renderWithChakra = (ui: string | number | boolean | JSX.Element | Iterable<React.ReactNode> | null | undefined) => {
   return render(<ChakraProvider>{ui}</ChakraProvider>);
 };
 
