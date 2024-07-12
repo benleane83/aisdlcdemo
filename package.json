@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@testing-library/react": "^16.0.0",
+    "axios": "^1.7.2",
     "mermaid": "^10.9.1"
   }
 }
